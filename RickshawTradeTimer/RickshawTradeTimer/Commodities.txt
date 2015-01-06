@@ -1,0 +1,85 @@
+﻿Chemical Drugs
+Explosives
+Hydrogen Fuel
+Mineral Oil
+Pesticides
+Clothing
+Consumer Technology
+Domestic Appliances
+Algae
+Animal Meat
+Coffee
+Fish
+Food Cartridges
+Fruit and Vegetables
+Grain
+Synthetic Meat
+Tea
+Alloys
+Plastics
+Polymers
+Semiconductors
+Superconductors
+Beer
+Liquor
+Narcotics
+Tobacco
+Wine
+Atmospheric Processors
+Crop Harvesters
+Heliostatic Furnaces
+Marine Equipment
+Mineral Extractors
+Microbial Furnaces
+Power Generators
+Water Purifiers
+Agri-Medicines
+Basic Medicines
+Combat Stabilisers
+Performance Enhancers
+Progenitor Cells
+Aluminium
+Beryllium
+Cobalt
+Copper
+Gallium
+Gold
+Indium
+Lithium
+Palladium
+Platinum
+Silver
+Tantalum
+Titanium
+Uranium
+Bauxite
+Bertrandite
+Coltan
+Gallite
+Indite
+Lepidolite
+Rutile
+Uraninite
+Imperial Slaves
+Slaves
+Advanced Catalysers
+Animal Monitors
+Aquaponic Systems
+Artificial Habitat Modules
+Auto Fabricators
+Bioreducing Lichen
+Computer Components
+H.E. Suits
+Land Enrichment Systems
+Resonating Separators
+Robotics
+Cotton
+Leather
+Natural Fabrics
+Synthetic Fabrics
+Biowaste
+Chemical Waste
+Scrap
+Non Lethal Weapons
+Personal Weapons
+Reactive Armour
