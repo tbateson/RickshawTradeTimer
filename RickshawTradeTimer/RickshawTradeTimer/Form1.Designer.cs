@@ -34,6 +34,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadCSVMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCSVMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotkeysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.tonsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profitPerHourColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.dataCollTab.SuspendLayout();
             this.dataTabPage.SuspendLayout();
@@ -264,16 +264,23 @@
             // loadCSVMenuItem
             // 
             this.loadCSVMenuItem.Name = "loadCSVMenuItem";
-            this.loadCSVMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadCSVMenuItem.Size = new System.Drawing.Size(121, 22);
             this.loadCSVMenuItem.Text = "Open";
             this.loadCSVMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveCSVMenuItem
             // 
             this.saveCSVMenuItem.Name = "saveCSVMenuItem";
-            this.saveCSVMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveCSVMenuItem.Size = new System.Drawing.Size(121, 22);
             this.saveCSVMenuItem.Text = "Save";
             this.saveCSVMenuItem.Click += new System.EventHandler(this.saveCSVToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.saveAsToolStripMenuItem.Text = "Save as...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -522,13 +529,6 @@
             this.profitPerHourColumn.Name = "profitPerHourColumn";
             this.profitPerHourColumn.ReadOnly = true;
             // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as...";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,7 +539,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Rickshaw Trade Calculator";
+            this.Text = "Rickshaw Trade Timer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
