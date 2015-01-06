@@ -31,7 +31,7 @@ namespace RickshawTradeTimer {
             actionBuilder.PauseOnCheckpoint = PauseOnEnd;
             actionBuilder.PauseOnEnd = PauseOnEnd;
             actionBuilder.AnnoucerEnabled = AnnoucerEnabled;
-            actionBuilder.AnnoucerVolume = annoucerVolumeTB.Value;
+            actionBuilder.AnnoucerVolume = annoucerVolumeTB.Value * 10;
         }
 
         private void saveButton_Click(object sender, EventArgs e) {
@@ -40,7 +40,7 @@ namespace RickshawTradeTimer {
                 actionBuilder.PauseOnCheckpoint = PauseOnEnd;
                 actionBuilder.PauseOnEnd = PauseOnEnd;
                 actionBuilder.AnnoucerEnabled = AnnoucerEnabled;
-                actionBuilder.AnnoucerVolume = annoucerVolumeTB.Value;
+                actionBuilder.AnnoucerVolume = annoucerVolumeTB.Value * 10;
             }
             SaveFile("GEN_settings.ini");
         }
