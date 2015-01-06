@@ -14,10 +14,12 @@ FAQ
 ==================
 
 Q: What does this tool do?
+
 A: This is a routing tool for keeping track of time and profit
 
 Q: Are you trying to steal my trade data?
-A: This tool is completely offline and collects no data on user use, unless you choose to upload your trade data yourself, no one will have access to your trade data.
+
+A: This tool is completely offline and collects no data on user use. Unless you choose to upload your trade data yourself, no one will have access to your trade data.
 
 Requirements
 ==================
