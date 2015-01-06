@@ -72,9 +72,9 @@
             this.typenextstationLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.typenextstationLabel.Location = new System.Drawing.Point(8, 134);
             this.typenextstationLabel.Name = "typenextstationLabel";
-            this.typenextstationLabel.Size = new System.Drawing.Size(95, 13);
+            this.typenextstationLabel.Size = new System.Drawing.Size(96, 13);
             this.typenextstationLabel.TabIndex = 3;
-            this.typenextstationLabel.Text = "Type Next Station:";
+            this.typenextstationLabel.Text = "Type Next System:";
             // 
             // modifiersNextStationCB
             // 

@@ -92,7 +92,7 @@ namespace RickshawTradeTimer {
         }
 
         public string NextStation() {
-            return Stations[(int)Math.Ceiling((float)currentlyAt / 2f)];
+            return Systems[(int)Math.Ceiling((float)currentlyAt / 2f)];
         }
 
         public string Transit() {
