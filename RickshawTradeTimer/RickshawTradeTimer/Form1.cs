@@ -182,14 +182,8 @@ namespace RickshawTradeTimer {
                 route = new Route();
                 actionBuilder = new ActionBuilder();
 
-                routePanel.Controls.Clear();
-                                        
-                systemTBs.Clear();
-                stationTBs.Clear();
-                commCBs.Clear();
-                buyTBs.Clear();
-                sellTBs.Clear();
-            
+                ClearRoutePanel();
+
                 dataGridView.Columns.Clear();
                 dataGridView.Rows.Clear();
 
@@ -393,10 +387,12 @@ namespace RickshawTradeTimer {
                 CsvImporter importer = new CsvImporter(s);
                 exporter = importer.ToCsvExporter();
                 exporter.LoadDataGridView(dataGridView);
+
+                ClearRoutePanel();
+
+                panelY = 0;
                 for(int i=0;i<importer.Stations.Count;i++) {
-                    if(i > 0) {
-                        AddNewRouteRow();
-                    }
+                    AddNewRouteRow();
                     systemTBs[i].Text = importer.Systems[i];
                     stationTBs[i].Text = importer.Stations[i];
                     commCBs[i].Text = importer.Commodities[i];
@@ -570,6 +566,15 @@ namespace RickshawTradeTimer {
             routePanel.Size = new Size(routePanel.Size.Width, dataCollTab.Size.Height - dataCollTab.Location.Y - BorderHeight);
         }
 
+        private void ClearRoutePanel() {
+            routePanel.Controls.Clear();
+                                        
+            systemTBs.Clear();
+            stationTBs.Clear();
+            commCBs.Clear();
+            buyTBs.Clear();
+            sellTBs.Clear();
+        }
 
     }
 }
