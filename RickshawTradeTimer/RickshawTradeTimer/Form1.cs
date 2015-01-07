@@ -129,10 +129,11 @@ namespace RickshawTradeTimer {
 
             try {
                 settingsForm.FromFile("GEN_settings.ini");
-                settingsForm.SetSettings(actionBuilder);
             } catch(FileNotFoundException) {}
             catch(Exception) {
                 MessageBox.Show("Error in parsing settings file");
+            } finally {                
+                settingsForm.SetSettings(actionBuilder);
             }
         }
 
