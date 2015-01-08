@@ -102,9 +102,9 @@ namespace RickshawTradeTimer {
         }
 
         public static string MilliToTimeString(long milliseconds) {
-            return (milliseconds / 3600000).ToString("d")     //hours
-                   + ":" + (milliseconds / 60000).ToString("d2")  //minutes
-                   + ":" + (milliseconds / 1000).ToString("d2");  //seconds
+            const long ticksPerMilliseconds = 10000L;
+            TimeSpan ts = new TimeSpan(milliseconds * ticksPerMilliseconds);
+            return ts.ToString(@"hh\:mm\:ss");
         }
 
     }

@@ -41,9 +41,9 @@
             this.swLabel = new System.Windows.Forms.Label();
             this.dataCollTab = new System.Windows.Forms.TabControl();
             this.dataTabPage = new System.Windows.Forms.TabPage();
-            this.phaseLabel = new System.Windows.Forms.Label();
             this.routePanel = new System.Windows.Forms.Panel();
             this.station1TB = new System.Windows.Forms.TextBox();
+            this.phaseLabel = new System.Windows.Forms.Label();
             this.abandonBtn = new System.Windows.Forms.Button();
             this.dataShowTabPage = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -78,6 +78,8 @@
             this.system1TB.Click += new System.EventHandler(this.tb_Click);
             this.system1TB.TextChanged += new System.EventHandler(this.system1TB_TextChanged);
             this.system1TB.Leave += new System.EventHandler(this.tb_Leave);
+            this.system1TB.MouseEnter += new System.EventHandler(this.tb_MouseEnter);
+            this.system1TB.MouseLeave += new System.EventHandler(this.tb_MouseLeave);
             // 
             // newRouteButton
             // 
@@ -339,15 +341,6 @@
             this.dataTabPage.Text = "Timer";
             this.dataTabPage.Click += new System.EventHandler(this.dataTabPage_Click);
             // 
-            // phaseLabel
-            // 
-            this.phaseLabel.AutoSize = true;
-            this.phaseLabel.Location = new System.Drawing.Point(541, 50);
-            this.phaseLabel.Name = "phaseLabel";
-            this.phaseLabel.Size = new System.Drawing.Size(13, 13);
-            this.phaseLabel.TabIndex = 25;
-            this.phaseLabel.Text = "1";
-            // 
             // routePanel
             // 
             this.routePanel.AutoScroll = true;
@@ -371,6 +364,16 @@
             this.station1TB.TabIndex = 23;
             this.station1TB.Text = "Station 1";
             this.station1TB.TextChanged += new System.EventHandler(this.station1TB_TextChanged);
+            this.station1TB.MouseEnter += new System.EventHandler(this.tb_MouseEnter);
+            this.station1TB.MouseLeave += new System.EventHandler(this.tb_MouseLeave);
+            // 
+            // phaseLabel
+            // 
+            this.phaseLabel.AutoSize = true;
+            this.phaseLabel.Location = new System.Drawing.Point(8, 28);
+            this.phaseLabel.Name = "phaseLabel";
+            this.phaseLabel.Size = new System.Drawing.Size(0, 13);
+            this.phaseLabel.TabIndex = 25;
             // 
             // abandonBtn
             // 

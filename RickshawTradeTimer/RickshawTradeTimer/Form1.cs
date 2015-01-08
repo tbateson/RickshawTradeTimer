@@ -440,6 +440,12 @@ namespace RickshawTradeTimer {
             commCBs.Clear();
             buyTBs.Clear();
             sellTBs.Clear();
+
+            route.Systems.Clear();
+            route.Stations.Clear();
+            route.Commodities.Clear();
+            route.BuyPrices.Clear();
+            route.SellPrices.Clear();
         }
 
     }

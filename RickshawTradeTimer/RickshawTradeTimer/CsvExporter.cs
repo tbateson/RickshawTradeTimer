@@ -57,7 +57,7 @@ namespace RickshawTradeTimer {
             string routeCsv = DateTime.Now.ToString();
             for(int i=0;i<route.Stations.Count;i++) {
                 routeCsv += ("," + route.Systems[i] + "," + route.Stations[i] + "," + route.Commodities[i] + "," + route.BuyPrices[i] + "," + route.SellPrices[i]);
-                if(i+1 < route.Stations.Count) { 
+                if(i+1 < route.Stations.Count) {
                     routeCsv += ("," + route.CheckpointTimes(i));
                 }
             }
