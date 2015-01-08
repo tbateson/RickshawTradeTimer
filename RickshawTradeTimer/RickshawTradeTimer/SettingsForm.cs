@@ -12,7 +12,7 @@ using System.IO;
 namespace RickshawTradeTimer {
     public partial class SettingsForm : Form {
         public bool PauseOnEnd { get { return !pauseOnEndCB.Checked; } 
-                                 set { pauseOnEndCB.Checked = value; }}
+                                 set { pauseOnEndCB.Checked = !value; }}
         public bool PauseOnCheckpoint { get { return pauseOnCheckpointCB.Checked; }
                                         set { pauseOnCheckpointCB.Checked = value; }}
         public bool AnnoucerEnabled { get { return enableAnnoucerCB.Checked; }

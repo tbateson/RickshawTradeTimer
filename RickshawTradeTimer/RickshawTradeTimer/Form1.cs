@@ -138,10 +138,10 @@ namespace RickshawTradeTimer {
                 route.NumberOfStations = systemTBs.Count;
                 actionBuilder.Commit(route.NextAction(), route, exporter, swLabel);
                 exporter.LoadDataGridView(dataGridView);
-                if(exporter.NeedToSave) {
+                {
                     string[] fileName = lastSessionCsv.Split('\\');
                     if(fileName.Length > 0)
-                        this.Text = this.Title + " - " + fileName[fileName.Length-1] + "*";
+                        this.Text = this.Title + " - " + fileName[fileName.Length-1] + (exporter.NeedToSave ? "*" : "") ;
                 }
                 phaseLabel.Text = route.Transit();
             } else if(hotkeysForm.NextStationHK == keys) /* &&

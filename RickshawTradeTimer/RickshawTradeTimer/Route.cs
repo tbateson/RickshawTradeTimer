@@ -10,8 +10,6 @@ namespace RickshawTradeTimer {
         int currentlyAt = 1;
 
         public int NumberOfStations { get; set; }
-        /*public bool CheckpointsPause { get; set; }
-        public bool ContinuousRuns { get; set; }*/
 
         public List<string> Systems = new List<string>();
         public List<string> Stations = new List<string>();
@@ -78,17 +76,13 @@ namespace RickshawTradeTimer {
 
         
         public int Profit() {
-            int profit = 0;
-            for(int i=0;i<SellPrices.Count;i++) {
-                profit += SellPrices[i] - BuyPrices[i];
-            }
+            int profit = SellPrices.Sum() - BuyPrices.Sum();
             return profit * Tons;
         }
 
         public long ProfitPerHour() {
             int profit = Profit();
-            long totalTime = m_checkptTimes.Sum() + m_time;
-            return (long)Math.Floor( (double)profit / ((double)totalTime / 3600000d) );
+            return (long)Math.Floor( (double)profit * (3600000d / (double)m_time) );
         }
 
         public string NextStation() {
