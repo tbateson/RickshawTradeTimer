@@ -40,7 +40,6 @@ namespace RickshawTradeTimer {
         List<ComboBox> commCBs = new List<ComboBox>();
         List<TextBox> buyTBs = new List<TextBox>();
         List<TextBox> sellTBs = new List<TextBox>();
-        //List<Button> removeBTNs = new List<Button>();
 
         private void Form1_Load_1(object sender, System.EventArgs e)
 	    {
@@ -49,7 +48,6 @@ namespace RickshawTradeTimer {
             commCBs.Add(commodityStation1);
             buyTBs.Add(buyStation1TB);
             sellTBs.Add(sellStation1TB);
-            //removeBTNs.Add(removeBtn);
             
             route.Stations.Add(String.Empty);
             route.Systems.Add(String.Empty);
@@ -107,17 +105,6 @@ namespace RickshawTradeTimer {
 
             try {
                 string[] DATA_settings = Settings.LoadSettings("DATA_settings.ini");
-                /*for(int i=0;i<DATA_settings.Length-5;i+=5) {
-                    if(i > 0) {
-                        AddNewRouteRow();
-                    }
-                    systemTBs[systemTBs.Count-1].Text = DATA_settings[i];
-                    stationTBs[stationTBs.Count-1].Text = DATA_settings[i+1];
-                    commCBs[commCBs.Count-1].Text = DATA_settings[i+2];
-                    buyTBs[buyTBs.Count-1].Text = DATA_settings[i+3];
-                    sellTBs[sellTBs.Count-1].Text = DATA_settings[i+4];
-                }
-                tonsTB.Text = DATA_settings[DATA_settings.Length-3];*/
                 lastSessionCsv = DATA_settings[0];
                 if(lastSessionCsv != string.Empty) {
                     LoadCsvFile(new StreamReader(lastSessionCsv).BaseStream);
@@ -164,8 +151,6 @@ namespace RickshawTradeTimer {
             {                   
                 actionBuilder.Commit(BaseAction.TypeNextStation, route, exporter, swLabel);
             }
-            /*Log._(DateTime.Now.ToString() + ": " + k.KeyCode.ToString() 
-                + "[" + k.Control + "," + k.Alt + "," + k.Shift + "]");*/
         }
         
         private void newRouteButton_Click(object sender, EventArgs e) {
@@ -309,16 +294,6 @@ namespace RickshawTradeTimer {
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
             Log.Dispose();
             settingsForm.SaveFile("GEN_settings.ini");
-            /*List<string> settings = new List<string>();
-            for(int i=0;i<systemTBs.Count;i++) {
-                settings.Add(systemTBs[i].Text);
-                settings.Add(stationTBs[i].Text);
-                settings.Add(commCBs[i].Text);
-                settings.Add(buyTBs[i].Text);
-                settings.Add(sellTBs[i].Text);
-            }
-            settings.Add(tonsTB.Text);
-            settings.Add(lastSessionCsv);*/
             Settings.SaveSettings("DATA_settings.ini", new string[] {lastSessionCsv});
             /*if(exporter.NeedToSave) {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -347,39 +322,6 @@ namespace RickshawTradeTimer {
         }
 
         private void swapStationsBtn_Click(object sender, EventArgs e) {
-            /*for(int i=0;i<systemTBs.Count;i++) {
-
-            }*/
-            /*string tmpStation = system1TB.Text;
-            string tmpBuy = buyStation1TB.Text;
-            string tmpSell = sellStation1TB.Text;
-            string tmpComm = commodityStation1.Text;
-
-            Color tmpStationColor = system1TB.ForeColor;
-            Color tmpBuyColor = buyStation1TB.ForeColor;
-            Color tmpSellColor = sellStation1TB.ForeColor;
-            Color tmpCommColor = commodityStation1.ForeColor;
-                
-
-            system1TB.Text = station2TB.Text;
-            buyStation1TB.Text = buyStation2TB.Text;
-            sellStation1TB.Text = sellStation2TB.Text;
-            commodityStation1.Text = commodityStation2.Text;
-
-            system1TB.ForeColor = station2TB.ForeColor;            
-            buyStation1TB.ForeColor = buyStation2TB.ForeColor;
-            sellStation1TB.ForeColor = sellStation2TB.ForeColor;
-            commodityStation1.ForeColor = commodityStation2.ForeColor;
-            
-            station2TB.Text = tmpStation;
-            buyStation2TB.Text = tmpBuy;
-            sellStation2TB.Text = tmpSell;
-            commodityStation2.Text = tmpComm; 
-
-            station2TB.ForeColor = tmpStationColor;            
-            buyStation2TB.ForeColor = tmpBuyColor;
-            sellStation2TB.ForeColor = tmpSellColor;
-            commodityStation2.ForeColor = tmpCommColor;*/
         }
         
         private void LoadCsvFile(Stream s) {
@@ -427,9 +369,6 @@ namespace RickshawTradeTimer {
             this.ActiveControl = swLabel;
         }
         
-        private void ShowToolTip(Control owner) {
-        }
-
         private void tb_MouseLeave(object sender, EventArgs e) { 
             toolTip.Hide((Control)sender);
         }
@@ -450,12 +389,6 @@ namespace RickshawTradeTimer {
             }
         }
         
-        private void dataCollTab_TabIndexChanged(object sender, EventArgs e) {
-            /*if(dataCollTab.SelectedIndex == 1) { //show data
-                exporter.LoadDataGridView(dataGridView);
-            }*/
-        }
-
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e) {
             settingsForm.Visible = true;
             settingsForm.SetSettings(actionBuilder);
@@ -463,7 +396,6 @@ namespace RickshawTradeTimer {
         
         int panelY = 53;
         private void AddNewRouteRow() {
-            Button removeBtn = CopyEvents.CopyAttr(this.removeBtn, new Button(), panelY, defaultStates, toolTips);
             TextBox stationTB = CopyEvents.CopyAttr(station1TB, new TextBox(), panelY, defaultStates, toolTips);
             TextBox systemTB = CopyEvents.CopyAttr(system1TB, new TextBox(), panelY, defaultStates, toolTips);
             panelY += 26;
@@ -473,14 +405,12 @@ namespace RickshawTradeTimer {
             TextBox sellTB = CopyEvents.CopyAttr(sellStation1TB, new TextBox(), panelY, defaultStates, toolTips);
             panelY += 27;
 
-            //routePanel.Controls.Add(removeBtn);
             routePanel.Controls.Add(stationTB);
             routePanel.Controls.Add(systemTB);
             routePanel.Controls.Add(commCB);
             routePanel.Controls.Add(buyTB);
             routePanel.Controls.Add(sellTB);
 
-            //removeBTNs.Add(removeBtn);
             systemTBs.Add(systemTB);
             stationTBs.Add(stationTB);
             commCBs.Add(commCB);
@@ -493,74 +423,10 @@ namespace RickshawTradeTimer {
             route.BuyPrices.Add(0);
             route.SellPrices.Add(0);
         }
-
-        private void addNewBtn_Click(object sender, EventArgs e) {
-            /*if(dataGridView.Rows.Count > 1) {
-                DialogResult dr = MessageBox.Show("Warning: Adding a new row while a spreadsheet already exists will delete your current spreadsheet, do you wish to continue?", 
-                    "Add New System Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-                switch(dr) {
-                    case DialogResult.Yes:
-                        dataGridView.Columns.Clear();
-                        dataGridView.Rows.Clear();
-                        AddNewRouteRow();
-                        exporter = new CsvExporter(route);
-                        break;
-                    case DialogResult.No:
-                    case DialogResult.Cancel:
-                        return;                
-                }
-            }*/
-        }
-        
-        private void removeBtn_Click(object sender, EventArgs e) {
-            /*for(int i=0;i<removeBTNs.Count;i++) {
-                if((Button)sender == removeBTNs[i]) {
-                    for(int j=i+1;j<removeBTNs.Count;j++) {
-                        systemTBs[j].Location = new Point(systemTBs[j].Location.X, systemTBs[j].Location.Y - 53);
-                        stationTBs[j].Location = new Point(stationTBs[j].Location.X, stationTBs[j].Location.Y - 53);
-                        commCBs[j].Location = new Point(commCBs[j].Location.X, commCBs[j].Location.Y - 53);
-                        buyTBs[j].Location = new Point(buyTBs[j].Location.X, buyTBs[j].Location.Y - 53);
-                        sellTBs[j].Location = new Point(sellTBs[j].Location.X, sellTBs[j].Location.Y - 53);
-                        removeBTNs[j].Location = new Point(removeBTNs[j].Location.X, removeBTNs[j].Location.Y - 53);
-                    }
-                    
-                    systemTBs[i].Dispose();
-                    stationTBs[i].Dispose();
-                    commCBs[i].Dispose();
-                    buyTBs[i].Dispose();
-                    sellTBs[i].Dispose();
-                    removeBTNs[i].Dispose();
-
-                    routePanel.Controls.Remove(stationTBs[i]);
-                    routePanel.Controls.Remove(systemTBs[i]);
-                    routePanel.Controls.Remove(commCBs[i]);
-                    routePanel.Controls.Remove(buyTBs[i]);
-                    routePanel.Controls.Remove(sellTBs[i]);
-                    routePanel.Controls.Remove(removeBTNs[i]);
-                                        
-                    systemTBs.RemoveAt(i);
-                    stationTBs.RemoveAt(i);
-                    commCBs.RemoveAt(i);
-                    buyTBs.RemoveAt(i);
-                    sellTBs.RemoveAt(i);
-                    removeBTNs.RemoveAt(i);
-                    
-                    route.Systems.RemoveAt(i);
-                    route.Stations.RemoveAt(i);
-                    route.Commodities.RemoveAt(i);
-                    route.BuyPrices.RemoveAt(i);
-                    route.SellPrices.RemoveAt(i);
-
-                    panelY -= 53;
-
-                    break;
-                }
-            }*/
-        }
-
+                
         private void Form1_ResizeEnd(object sender, EventArgs e) {            
             int BorderWidth = (this.Width - this.ClientSize.Width);
-            int BorderHeight = /*(this.Height - this.ClientSize.Height - 2*/(2 * BorderWidth+10) + menuStrip1.Size.Height;
+            int BorderHeight = (2 * BorderWidth+10) + menuStrip1.Size.Height;
             dataGridView.Size = new Size(Size.Width - BorderWidth, Size.Height - BorderHeight);
             dataCollTab.Size = new Size(Size.Width - BorderWidth, Size.Height - BorderHeight);
             routePanel.Size = new Size(routePanel.Size.Width, dataCollTab.Size.Height - dataCollTab.Location.Y - BorderHeight);

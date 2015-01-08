@@ -39,14 +39,11 @@
             this.hotkeysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swLabel = new System.Windows.Forms.Label();
-            this.swapStationsBtn = new System.Windows.Forms.Button();
             this.dataCollTab = new System.Windows.Forms.TabControl();
             this.dataTabPage = new System.Windows.Forms.TabPage();
             this.phaseLabel = new System.Windows.Forms.Label();
             this.routePanel = new System.Windows.Forms.Panel();
-            this.removeBtn = new System.Windows.Forms.Button();
             this.station1TB = new System.Windows.Forms.TextBox();
-            this.addNewBtn = new System.Windows.Forms.Button();
             this.abandonBtn = new System.Windows.Forms.Button();
             this.dataShowTabPage = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -314,18 +311,6 @@
             this.swLabel.TabIndex = 19;
             this.swLabel.Text = "00:00:00";
             // 
-            // swapStationsBtn
-            // 
-            this.swapStationsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.swapStationsBtn.Location = new System.Drawing.Point(45, 302);
-            this.swapStationsBtn.Name = "swapStationsBtn";
-            this.swapStationsBtn.Size = new System.Drawing.Size(137, 28);
-            this.swapStationsBtn.TabIndex = 20;
-            this.swapStationsBtn.Text = "Swap Stations";
-            this.swapStationsBtn.UseVisualStyleBackColor = true;
-            this.swapStationsBtn.Visible = false;
-            this.swapStationsBtn.Click += new System.EventHandler(this.swapStationsBtn_Click);
-            // 
             // dataCollTab
             // 
             this.dataCollTab.Controls.Add(this.dataTabPage);
@@ -335,18 +320,15 @@
             this.dataCollTab.SelectedIndex = 0;
             this.dataCollTab.Size = new System.Drawing.Size(669, 364);
             this.dataCollTab.TabIndex = 21;
-            this.dataCollTab.SelectedIndexChanged += new System.EventHandler(this.dataCollTab_TabIndexChanged);
             // 
             // dataTabPage
             // 
             this.dataTabPage.BackColor = System.Drawing.SystemColors.Control;
             this.dataTabPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.dataTabPage.Controls.Add(this.phaseLabel);
             this.dataTabPage.Controls.Add(this.routePanel);
-            this.dataTabPage.Controls.Add(this.addNewBtn);
+            this.dataTabPage.Controls.Add(this.phaseLabel);
             this.dataTabPage.Controls.Add(this.abandonBtn);
             this.dataTabPage.Controls.Add(this.newRouteButton);
-            this.dataTabPage.Controls.Add(this.swapStationsBtn);
             this.dataTabPage.Controls.Add(this.swLabel);
             this.dataTabPage.Controls.Add(this.tonsTB);
             this.dataTabPage.Location = new System.Drawing.Point(4, 22);
@@ -369,7 +351,6 @@
             // routePanel
             // 
             this.routePanel.AutoScroll = true;
-            this.routePanel.Controls.Add(this.removeBtn);
             this.routePanel.Controls.Add(this.station1TB);
             this.routePanel.Controls.Add(this.sellStation1TB);
             this.routePanel.Controls.Add(this.commodityStation1);
@@ -379,20 +360,6 @@
             this.routePanel.Name = "routePanel";
             this.routePanel.Size = new System.Drawing.Size(429, 278);
             this.routePanel.TabIndex = 24;
-            // 
-            // removeBtn
-            // 
-            this.removeBtn.Enabled = false;
-            this.removeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeBtn.Location = new System.Drawing.Point(339, 11);
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(28, 28);
-            this.removeBtn.TabIndex = 25;
-            this.removeBtn.Text = "-";
-            this.removeBtn.UseVisualStyleBackColor = true;
-            this.removeBtn.Visible = false;
-            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // station1TB
             // 
@@ -404,19 +371,6 @@
             this.station1TB.TabIndex = 23;
             this.station1TB.Text = "Station 1";
             this.station1TB.TextChanged += new System.EventHandler(this.station1TB_TextChanged);
-            // 
-            // addNewBtn
-            // 
-            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewBtn.Location = new System.Drawing.Point(11, 302);
-            this.addNewBtn.Name = "addNewBtn";
-            this.addNewBtn.Size = new System.Drawing.Size(28, 28);
-            this.addNewBtn.TabIndex = 22;
-            this.addNewBtn.Text = "+";
-            this.addNewBtn.UseVisualStyleBackColor = true;
-            this.addNewBtn.Visible = false;
-            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
             // 
             // abandonBtn
             // 
@@ -574,17 +528,14 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hotkeysToolStripMenuItem;
         private System.Windows.Forms.Label swLabel;
-        private System.Windows.Forms.Button swapStationsBtn;
         private System.Windows.Forms.TabControl dataCollTab;
         private System.Windows.Forms.TabPage dataTabPage;
         private System.Windows.Forms.TabPage dataShowTabPage;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button abandonBtn;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.Button addNewBtn;
         private System.Windows.Forms.TextBox station1TB;
         private System.Windows.Forms.Panel routePanel;
-        private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn systemColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn station1Column;
