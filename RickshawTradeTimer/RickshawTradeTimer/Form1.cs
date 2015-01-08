@@ -143,7 +143,7 @@ namespace RickshawTradeTimer {
                     if(fileName.Length > 0)
                         this.Text = this.Title + " - " + fileName[fileName.Length-1] + "*";
                 }
-                phaseLabel.Text = /*((float)route.Phase()/2f).ToString();*/route.Transit();
+                phaseLabel.Text = route.Transit();
             } else if(hotkeysForm.NextStationHK == keys) /* &&
                 hotkeysForm.NextStationCtrl == k.Control &&
                 hotkeysForm.NextStationAlt == k.Alt &&
@@ -166,6 +166,7 @@ namespace RickshawTradeTimer {
 
                 route = new Route();
                 actionBuilder = new ActionBuilder();
+                settingsForm.SetSettings(actionBuilder);
 
                 ClearRoutePanel();
 

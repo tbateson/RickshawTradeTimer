@@ -51,6 +51,7 @@ namespace RickshawTradeTimer {
                     SpeakAsync("Ending");
                     exporter.AppendRoute(route);
                     StopTracking();
+                    if(!PauseOnEnd) { Commit(BaseAction.Start, route, exporter, swLabel); }
                     break;                    
                 case BaseAction.Checkpoint:
                     route.Checkpoint(PauseOnCheckpoint);

@@ -11,7 +11,7 @@ using System.IO;
 
 namespace RickshawTradeTimer {
     public partial class SettingsForm : Form {
-        public bool PauseOnEnd { get { return pauseOnEndCB.Checked; } 
+        public bool PauseOnEnd { get { return !pauseOnEndCB.Checked; } 
                                  set { pauseOnEndCB.Checked = value; }}
         public bool PauseOnCheckpoint { get { return pauseOnCheckpointCB.Checked; }
                                         set { pauseOnCheckpointCB.Checked = value; }}
@@ -37,7 +37,7 @@ namespace RickshawTradeTimer {
         private void saveButton_Click(object sender, EventArgs e) {
             this.Visible = false;
             if(actionBuilder != null) {
-                actionBuilder.PauseOnCheckpoint = PauseOnEnd;
+                actionBuilder.PauseOnCheckpoint = PauseOnCheckpoint;
                 actionBuilder.PauseOnEnd = PauseOnEnd;
                 actionBuilder.AnnoucerEnabled = AnnoucerEnabled;
                 actionBuilder.AnnoucerVolume = annoucerVolumeTB.Value * 10;

@@ -41,9 +41,9 @@
             this.pauseOnCheckpointCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pauseOnCheckpointCB.Location = new System.Drawing.Point(12, 12);
             this.pauseOnCheckpointCB.Name = "pauseOnCheckpointCB";
-            this.pauseOnCheckpointCB.Size = new System.Drawing.Size(131, 17);
+            this.pauseOnCheckpointCB.Size = new System.Drawing.Size(125, 17);
             this.pauseOnCheckpointCB.TabIndex = 0;
-            this.pauseOnCheckpointCB.Text = "Pause on Checkpoint?";
+            this.pauseOnCheckpointCB.Text = "Pause on Checkpoint";
             this.pauseOnCheckpointCB.UseVisualStyleBackColor = true;
             // 
             // pauseOnEndCB
@@ -52,9 +52,9 @@
             this.pauseOnEndCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pauseOnEndCB.Location = new System.Drawing.Point(12, 35);
             this.pauseOnEndCB.Name = "pauseOnEndCB";
-            this.pauseOnEndCB.Size = new System.Drawing.Size(119, 17);
+            this.pauseOnEndCB.Size = new System.Drawing.Size(113, 17);
             this.pauseOnEndCB.TabIndex = 1;
-            this.pauseOnEndCB.Text = "Continuous Routes?";
+            this.pauseOnEndCB.Text = "Continuous Routes";
             this.pauseOnEndCB.UseVisualStyleBackColor = true;
             // 
             // cancelButton

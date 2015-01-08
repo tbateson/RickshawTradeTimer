@@ -10,7 +10,8 @@ namespace RickshawTradeTimer {
         int currentlyAt = 1;
 
         public int NumberOfStations { get; set; }
-        public bool ContinuousRuns { get; set; }
+        /*public bool CheckpointsPause { get; set; }
+        public bool ContinuousRuns { get; set; }*/
 
         public List<string> Systems = new List<string>();
         public List<string> Stations = new List<string>();
@@ -66,8 +67,7 @@ namespace RickshawTradeTimer {
 
         public void End() {
             currentlyAt = 1;
-            if(!ContinuousRuns)
-                sw.Stop();
+            sw.Stop();
             m_time = sw.ElapsedMilliseconds;
         }
         
